@@ -2,4 +2,13 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:plone="http://namespaces.plone.org/plone">
 
+    <plone:behavior
+      title="Voting"
+      name="collective.conferencevoting"
+      description="Allow voting for a conference contribution item"
+      provides="collective.conferences.interfaces.IVoting"
+      factory=".voting.Vote"
+      marker="collective.conferences.interfaces.IVotable"
+      />
+
 </configure>
