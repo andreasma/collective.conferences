@@ -4,7 +4,7 @@
 
     <plone:behavior
       title="Voting"
-      name="collective.conferencevoting"
+      name="conferences.voting"
       description="Allow voting for a conference contribution item"
       provides="collective.conferences.interfaces.IVoting"
       factory=".voting.Vote"
