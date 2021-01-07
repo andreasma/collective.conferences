@@ -1,5 +1,5 @@
 # encoding=utf-8
-from .interfaces import IVoting
+from collective.conferences.interfaces import IVoting
 from zope.interface import implementer
 
 
