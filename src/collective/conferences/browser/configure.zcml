@@ -25,4 +25,32 @@
     permission="cmf.ManagePortal"
     />
 
+  <browser:viewlet
+     name="voting"
+     for="..interfaces.IVoting"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+     layer="..interfaces.IVotableLayer"
+     class=".viewlets.Vote"
+     template="templates/voting_viewlet.pt"
+     permission="zope2.View"
+     />
+
+
+  <browser:page
+     name="vote"
+     for="collective.conferences.interfaces.IVotable"
+     layer="..interfaces.IVotableLayer"
+     class=".vote.Vote"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     name="clearvotes"
+     for="collective.conferences.interfaces.IVotable"
+     layer="..interfaces.IVotableLayer"
+     class=".vote.ClearVotes"
+     permission="zope2.ViewManagementScreens"
+     />
+
+
 </configure>
