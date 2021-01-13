@@ -10,8 +10,8 @@ class Vote(BrowserPage):
     def __call__(self, rating):
         voting = IVoting(self.context)
         voting.vote(rating, self.request)
-        notify(ObjectModifiedEvent(self.context, "A vote has been submitted"))
-        return "success"
+        notify(ObjectModifiedEvent(self.context, 'A vote has been submitted'))
+        return 'success'
 
 
 class ClearVotes(BrowserPage):
@@ -20,5 +20,5 @@ class ClearVotes(BrowserPage):
         voting = IVoting(self.context)
         voting.clear()
         notify(ObjectModifiedEvent(self.context,
-                                   "All votes have been removed"))
-        return "success"
+                                   'All votes have been removed'))
+        return 'success'
