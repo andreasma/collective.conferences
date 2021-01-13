@@ -1,0 +1,5 @@
+<tal:snippet omit-tag="">
+  <div class="voting">
+
+  </div>
+</tal:snippet>
