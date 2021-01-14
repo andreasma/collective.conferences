@@ -1,8 +1,8 @@
 # encoding=utf-8
 from collective.conferences.interfaces import IVoting
+from plone import api
 from plone.app.layout.viewlets import common as base
 from Products.CMFCore.permissions import ViewManagementScreens
-from Products.CMFCore.utils import getToolByName
 
 
 class Vote(base.ViewletBase):
@@ -16,9 +16,7 @@ class Vote(base.ViewletBase):
         if self.vote is None:
             self.vote = IVoting(self.context)
         if self.is_manager is None:
-            membership_tool = getToolByName(self.context, 'portal_membership')
-            self.is_manager = membership_tool.checkPermission(
-                ViewManagementScreens, self.context)
+            self.is_manager = api.user.has_permission(ViewManagementScreens, obj=self.context)
 
     def voted(self):
         return self.vote.already_voted(self.request)
