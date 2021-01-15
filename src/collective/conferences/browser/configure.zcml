@@ -27,7 +27,7 @@
 
   <browser:viewlet
      name="voting"
-     for="..interfaces.IVoting"
+     for="..interfaces.IVotable"
      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
      layer="..interfaces.IVotableLayer"
      class=".viewlets.Vote"
