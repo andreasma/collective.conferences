@@ -18,8 +18,8 @@ class Vote(object):
         annotations = IAnnotations(context)
         if KEY not in annotations.keys():
             annotations[KEY] = PersistentDict({
-                "voted": PersistentList(),
-                'votes': PersistentDict()
+                'voted': PersistentList(),
+                'votes': PersistentDict(),
             })
         self.annotations = annotations[KEY]
 
@@ -39,13 +39,13 @@ class Vote(object):
         """
         hash_ = md5()
         hash_.update(safe_bytes(request.getClientAddr()))
-        for key in ["User-Agent", "Accept-Language", "Accept-Encoding"]:
+        for key in ['User-Agent', 'Accept-Language', 'Accept-Encoding']:
             hash_.update(safe_bytes(request.getHeader(key)))
         return hash_.hexdigest()
 
     def vote(self, vote, request):
         if self.already_voted(request):
-            raise KeyError("You may not vote twice")
+            raise KeyError('You may not vote twice')
         vote = int(vote)
         self.annotations['voted'].append(self._hash(request))
         votes = self.annotations['votes']
@@ -53,6 +53,9 @@ class Vote(object):
             votes[vote] = 1
         else:
             votes[vote] += 1
+
+    def has_votes(self):
+        return len(self.annotations.get('votes', [])) != 0
 
     def average_vote(self):
         if not has_votes(self):
@@ -62,15 +65,12 @@ class Vote(object):
             [vote * count for (vote, count) in self.annotations['votes'].items()])
         return float(total_points) / total_votes
 
-    def has_votes(self):
-        return len(self.annotations.get('votes', [])) != 0
-
     def already_voted(self, request):
         return self._hash(request) in self.annotations['voted']
 
     def clear(self):
         annotations = IAnnotations(self.context)
         annotations[KEY] = PersistentDict(
-            {'voted': PersistentList(), 'votes': PersistentDict()}
+            {'voted': PersistentList(), 'votes': PersistentDict()},
         )
         self.annotations = annotations[KEY]
