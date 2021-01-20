@@ -49,3 +49,44 @@ ul.speakerlist {
     padding-left: 2em;
     padding-bottom: 1em;
     }
+
+.conference_voting {
+    float: right;
+    border: 1px solid #ddd;
+    background-color: #DDDDDD;
+    padding: 0.5em 1em;
+}
+
+
+.conference_voting .conference_voting_option {
+    display: None;
+}
+
+.areyousure {
+    display: None;
+}
+
+.conference_voting div.conference_votes span {
+    border: 0 solid #DDDDDD;
+    cursor: pointer;
+    float: left;
+    margin: 0 0.2em;
+    padding: 0 0.5em;
+}
+
+.conference_votes {
+    display: inline;
+    float: right;
+}
+
+.conference_voting #conference_voting_plus {
+    background-color: LimeGreen;
+}
+
+.voting #conference_voting_neutral {
+    background-color: yellow;
+}
+
+.voting #conference_voting_negative {
+    background-color: red;
+}
