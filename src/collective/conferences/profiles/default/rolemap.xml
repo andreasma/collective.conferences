@@ -20,5 +20,11 @@
     <permission name="collective.conferences: Modify talktime" acquire="True">
       <role name="Manager" />
     </permission>
+    <permission name="collective.conferences: View Vote" acquire="True">
+      <role name="Anonymous" />
+    </permission>
+    <permission name="collective.conferences: Do Vote" acquire="True">
+      <role name="Anonymous" />
+    </permission>
   </permissions>
   </rolemap>

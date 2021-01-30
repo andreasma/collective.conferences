@@ -22,4 +22,14 @@
         title="collective.conferences: Modify talktime"
         />
 
+    <permission
+        id="collective.conferences.view_vote"
+        title="collective.conferences: View Vote"
+        />
+
+    <permission
+        id="collective.conferences.do_vote"
+        title="collective.conferences: Do Vote"
+        />
+
 </configure>
