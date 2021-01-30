@@ -16,7 +16,7 @@ class Vote(base.ViewletBase):
         if self.vote is None:
             self.vote = IVoting(self.context)
         if self.is_manager is None:
-            self.is_manager = api.user.has_permission(ViewManagementScreens, obj=self.context)
+            self.is_manager = api.user.has_permission(ViewManagementScreens)
 
     def voted(self):
         return self.vote.already_voted(self.request)
