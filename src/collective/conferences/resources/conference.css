@@ -83,10 +83,10 @@ ul.speakerlist {
     background-color: LimeGreen;
 }
 
-.voting #conference_voting_neutral {
+.conference_voting #conference_voting_neutral {
     background-color: yellow;
 }
 
-.voting #conference_voting_negative {
+.conference_voting #conference_voting_negative {
     background-color: red;
 }
