@@ -11,12 +11,19 @@
       layer="collective.conferences.interfaces.ICollectiveConferencesLayer"
       />
 
+  <include file="../permissions.zcml" />
+
   <!-- Publish static files -->
   <plone:static
       name="collective.conferences"
       type="plone"
       directory="static"
       />
+
+  <permission
+     id="collective.conferences.view_vote2"
+     title="collective.conferences: View Vote2"
+     />
 
   <browser:page
     name="collectiveconference-controlpanel"
@@ -32,7 +39,7 @@
      layer="..interfaces.IVotableLayer"
      class=".viewlets.Vote"
      template="templates/voting_viewlet.pt"
-     permission="zope2.View"
+     permission="collective.conferences.view_vote"
      />
 
 
@@ -41,7 +48,7 @@
      for="collective.conferences.interfaces.IVotable"
      layer="..interfaces.IVotableLayer"
      class=".vote.Vote"
-     permission="zope2.View"
+     permission="collective.conferences.do_vote"
      />
 
   <browser:page
