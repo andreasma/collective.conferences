@@ -4,4 +4,16 @@
     <records interface="collective.conferences.browser.controlpanel.ICollectiveconferenceControlPanel"
          prefix="collectiveconference" />
 
+    <records prefix="plone.bundles/collectiveconf-bundle"
+          interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="resources">
+            <element>collectiveconf-main</element>
+        </value>
+        <value key="enabled">True</value>
+        <value key="compile">True</value>
+        <value key="csscompilation">++resource++collective.conferences/conference.css</value>
+        <value key="jscompilation">++resource++collective.conferences/conferences.js</value>
+        <value key="last_compilation"></value>
+    </records>
+
 </registry>
