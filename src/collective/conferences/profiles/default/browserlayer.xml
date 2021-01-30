@@ -4,4 +4,11 @@
       name="collective.conferences"
       interface="collective.conferences.interfaces.ICollectiveConferencesLayer"
       />
+
+  <layer
+      name="conferences.voting"
+      interface="collective.conferences.interfaces.IVotableLayer"
+  />
+
+
 </layers>
